@@ -43,8 +43,11 @@ const App = () => {
             </section>
             <section className='px-20 py-7 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {contactList?.length < 1 && <h2>User cannot be found</h2>}
-                {isLoading && <h2 className='text-blue-500'>Loading...</h2>}
-                <ContactCards contactList={contactList} />
+                {isLoading ? (
+                    <h2 className='text-blue-500'>Loading...</h2>
+                ) : (
+                    <ContactCards contactList={contactList} />
+                )}
             </section>
         </div>
     );
