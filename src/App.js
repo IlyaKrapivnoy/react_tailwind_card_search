@@ -42,6 +42,7 @@ const App = () => {
                 </form>
             </section>
             <section className='p-20 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+                {contactList?.length < 1 && <h2>User cannot be found</h2>}
                 <ContactCards contactList={contactList} />
             </section>
         </div>
