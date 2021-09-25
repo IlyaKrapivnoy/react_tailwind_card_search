@@ -8,11 +8,11 @@ const App = () => {
                     <input
                         type='text'
                         placeholder='Type Here...'
-                        className='ml-20 mt-6 pl-2 rounded-md'
+                        className='ml-20 mt-6 p-2 rounded-md'
                     />
                 </form>
             </section>
-            <section>
+            <section className=''>
                 <ContactCards />
             </section>
         </div>
