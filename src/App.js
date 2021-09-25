@@ -1,9 +1,14 @@
-function App() {
-  return (
-    <div className="App">
-        <h1 className='mt-10'>hi</h1>
-    </div>
-  );
-}
+import ContactCards from './ContactCards';
+
+const App = () => {
+    return (
+        <div className='bg-gray-100'>
+            <section></section>
+            <section>
+                <ContactCards />
+            </section>
+        </div>
+    );
+};
 
 export default App;
