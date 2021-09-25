@@ -12,7 +12,7 @@ const App = () => {
                     />
                 </form>
             </section>
-            <section className=''>
+            <section className='p-20 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
                 <ContactCards />
             </section>
         </div>
