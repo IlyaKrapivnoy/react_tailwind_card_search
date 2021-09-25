@@ -1,4 +1,6 @@
-const ContactCards = () => {
+const ContactCards = ({ contactList }) => {
+    contactList && console.log(contactList);
+
     return (
         <>
             <figure className='bg-gray-200 h-80 rounded-lg shadow-md pt-7'>
