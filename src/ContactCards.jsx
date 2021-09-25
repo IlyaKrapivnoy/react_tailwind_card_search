@@ -11,7 +11,7 @@ const ContactCards = ({ contactList }) => {
                     key={uuidv4()}
                 >
                     <img
-                        src={contact.picture?.medium}
+                        src={contact.picture?.large}
                         alt='user'
                         className='w-28 rounded-full mx-auto'
                     />

@@ -10,10 +10,22 @@ const App = () => {
     const [filterQuery, setFilterQuery] = useState(null);
 
     useEffect(() => {
-        if (filterQuery) {
-            // use filterQuery here
+        if (!filterQuery) {
+            setContactList(data?.results?.slice(0, 10));
         } else {
-            setContactList(data?.results);
+            const queryString = filterQuery.toLowerCase();
+            const filteredData = data?.results?.filter((contact) => {
+                const fullName = `${contact.name.first} ${contact.name.last}`;
+
+                // if it's just one letter, return all names that start with it
+                if (queryString.length === 1) {
+                    const firstLetter = fullName.charAt(0).toLowerCase();
+                    return firstLetter === queryString;
+                } else {
+                    return fullName.toLowerCase().includes(queryString);
+                }
+            });
+            setContactList(filteredData);
         }
     }, [data, filterQuery]);
 
@@ -25,6 +37,7 @@ const App = () => {
                         type='text'
                         placeholder='Type Here...'
                         className='ml-20 mt-6 p-2 rounded-md'
+                        onChange={(e) => setFilterQuery(e.target.value)}
                     />
                 </form>
             </section>
